@@ -1,0 +1,69 @@
+{
+    "_id": "4c63e272-1109-4b23-b4df-cdb7ae7552e9",
+    "_thread": "A1",
+    "_author": "Adam",
+    "meta": {
+        "socio-political": {
+            "persistance": "Fleeting",
+            "victim": "Interest",
+            "confidence": "100",
+            "value": "None"
+        },
+        "phase": {
+            "value": "Delivery",
+            "confidence": "100"
+        },
+        "start_time": {
+            "value": "2019-09-10T13:09:50.421892",
+            "confidence": 50
+        },
+        "end_time": {
+            "value": "2019-09-10T13:09:50.763719",
+            "confidence": 50
+        },
+        "result": {
+            "value": "Successful",
+            "confidence": "100"
+        },
+        "directionality": {
+            "value": "Adversary-to-Infrastructure"
+        },
+        "methodology": {
+            "value": "Spear Phishing",
+            "confidence": "100"
+        },
+        "resources": [
+            {
+                "type": "Knowledge",
+                "value": "Email address of victim",
+                "confidence": "20"
+            },
+            {
+                "type": "Software",
+                "value": "Something to send the emails",
+                "confidence": "100"
+            }
+        ]
+    },
+    "adversary": {
+        "value": "Whitefly",
+        "confidence": "100"
+    },
+    "capability": {
+        "value": "T1020",
+        "reference": "T1020",
+        "confidence": 100
+    },
+    "infrastructure": {
+        "type": "Type 1",
+        "kind": "email-addr",
+        "value": "test@reg.com",
+        "confidence": "80"
+    },
+    "victim": {
+        "type": "Persona",
+        "value": "Hospital XYZ",
+        "susceptibilities": "Social Engineering",
+        "confidence": "50"
+    }
+}

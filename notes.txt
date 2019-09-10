@@ -1,0 +1,130 @@
+# Object
+
+
+event = {
+    "id": "",
+    "_chain": "",
+    "_author": "",
+    "meta": {
+        "socio-political": {
+            "persistance": ["Fleeting", "Enduring", "Unknown"]
+            "victim": ["Interest", "Opportunity"]
+            "confidence": 100,
+            "value": ""
+        },
+        "phase": {
+            "value": [
+                "Reconnaissance",
+                "Weaponization",
+                "Delivery",
+                "Exploitation",
+                "Installation",
+                "C2",
+                "Action On Objective"
+            ],
+            "confidence": 100
+        },
+        "start_time": {
+            "value": "",
+            "confidence": 100
+        },
+        "end_time": {
+            "value": "",
+            "confidence": 100
+        },
+        "result": {
+            "value": ["Successful", "Unsuccessful", "Unknown"],
+            "confidence": 100
+        },
+        "directionality": {
+            "value": [
+                "Victim-to-Infrastructure",
+                "Infrastructure-to-Victim",
+                "Infrastructure-to-Infrastructure",
+                "Adversary-to-Infrastructure",
+                "Infrastructure-to-Adversary",
+                "Bidirectional",
+                "Unknown"
+            ]
+        },
+        "methodology": {
+            "value": "",
+            "confidence": 100
+        },
+        "resources": {
+            "type": ["Software", "Knowledge", "Information", "Hardware", "Funds", "Facilities", "Access"]
+            "value": "",
+            "confidence": 100
+        }
+    },
+    "adversary": {
+        "value": "",
+        "confidence": 100
+    },
+    "capability": {
+        "value": "",
+        "reference": "",
+        "confidence": 100
+    },
+    "infrastructure": {
+        "value": "",
+        "type": "",
+        "confidence": 100
+    }.
+    "victim": {
+        "type": ["Persona", "Asset"]
+        "susceptibilities": []
+        "confidence": ""
+    }
+}
+
+
+# CLI
+
+
+Search On Node Value
+Search Raw
+Create Activity Group Query
+List Activity Groups
+Create new
+List all in chain
+
+
+# Command Tree
+
+show
+    activity-groups
+    threads
+
+search
+    raw
+        - Search query
+    thread
+        - <thread id>
+    activity-group
+        - <activity-group id>
+
+group
+    thread
+        - <query to agg>
+    diamonds
+        - <query to agg>
+
+export
+    <todo>
+
+create
+    diamonds
+        - (Field Gen For Now)
+    activity-group
+        - <Mongo Query>
+
+delete
+    diamond
+        - <ID of diamond>
+    activity-group
+        - <ID of activity group>
+    thread
+        - <ID of thread>
+    query
+        - <ID of query>

@@ -1,0 +1,11 @@
+[console_scripts]
+gcli = golconda.main:main
+
+[golconda.cli]
+create = golconda.create:Create
+delete = golconda.delete:Delete
+export = golconda.export:Export
+group = golconda.group:Group
+search = golconda.search:Search
+show = golconda.show:Show
+

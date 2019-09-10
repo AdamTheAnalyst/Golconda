@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: golconda
+Version: 0.1
+Summary: Diamond model exploration tool
+Home-page: https://github.com/AdamTheAnalyst/golconda
+Author: Doug Hellmann
+Author-email: doug.hellmann@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/AdamTheAnalyst/golconda
+Description: # Golconda
+        
+        Golconda is a client wrapper around the Diamond Model. It is designed to provide clean cli and python interface for working with threat intelligence in the diamond model.
+        
+        Essentially you can think of Golconda like a headless Threat Intelligence Platform.
+        
+        
+        
+Platform: Any
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console

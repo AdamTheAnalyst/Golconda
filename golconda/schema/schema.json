@@ -1,0 +1,277 @@
+{
+	"_id": {
+		"type": "string",
+		"format": "uuid"
+	},
+	"_thread": {
+		"type": "string"
+	},
+	"_author": {
+		"type": "string"
+	},
+	"meta": {
+		"type": "object",
+		"properties": {
+			"socio-political": {
+				"type": "object",
+				"properties": {
+					"persistance": {
+						"description": "How persistent is the adversary?",
+						"type": "string",
+						"enum": [
+							"Fleeting",
+							"Enduring",
+							"Unknown"
+						],
+						"default": "Unknown"
+					},
+					"victim": {
+						"description": "How strong is the relation between victim and adversary?",
+						"type": "string",
+						"enum": [
+							"Interest",
+							"Opportunity",
+							"Unknown"
+						],
+						"default": "Unknown"
+					},
+					"confidence": {
+						"type": "integer",
+						"default": 100
+					},
+					"value": {
+						"description": "Do you have any other socio-political notes?",
+						"type": "string",
+						"default": "None"
+					}
+				}
+			},
+			"phase": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"description": "Which kill-chain phase are you representing?",
+						"type": "string",
+						"enum": [
+							"Reconnaissance",
+							"Weaponization",
+							"Delivery",
+							"Exploitation",
+							"Installation",
+							"C2",
+							"Action On Objective"
+						],
+						"default": "C2"
+					},
+					"confidence": {
+						"type": "integer",
+						"default": 100
+					}
+				}
+			},
+			"start_time": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"description": "When did this attack start?",
+						"default": "(Now)",
+						"type": "date-time"
+					},
+					"confidence": {
+						"type": "integer",
+						"default": 50
+					}
+				}
+			},
+			"end_time": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"description": "When did this attack end?",
+						"default": "(Now)",
+						"type": "date-time"
+					},
+					"confidence": {
+						"type": "integer",
+						"default": 50
+					}
+				}
+			},
+			"result": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"description": "Was the attack successful?",
+						"type": "string",
+						"enum": [
+							"Successful",
+							"Unsuccessful",
+							"Unknown"
+						],
+						"default": "Unknown"
+					},
+					"confidence": {
+						"type": "integer",
+						"default": 100
+					}
+				}
+			},
+			"directionality": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"description": "What was the directionality of the attack?",
+						"type": "string",
+						"enum": [
+							"Victim-to-Infrastructure",
+							"Infrastructure-to-Victim",
+							"Infrastructure-to-Infrastructure",
+							"Adversary-to-Infrastructure",
+							"Infrastructure-to-Adversary",
+							"Bidirectional",
+							"Unknown"
+						],
+						"default": "Unknown"
+					}
+				}
+			},
+			"methodology": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"description": "Do you have a few words that sum up the attack? e.g. Spear Phishing",
+						"type": "string",
+						"default": "Generic Attack"
+					},
+					"confidence": {
+						"type": "integer",
+						"default": 100
+					}
+				}
+			},
+			"resources": {
+				"description": "What resources can you infer your adversary had?",
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "string",
+							"enum": [
+								"Software",
+								"Knowledge",
+								"Information",
+								"Hardware",
+								"Funds",
+								"Facilities",
+								"Access"
+							],
+							"default": "Knowledge"
+						},
+						"value": {
+							"type": "string"
+						},
+						"confidence": {
+							"type": "integer",
+							"default": 20
+						}
+					}
+				}
+			}
+		}
+	},
+	"adversary": {
+		"type": "object",
+		"properties": {
+			"value": {
+				"description": "Name of adversary if known?",
+				"type": "string",
+				"default": "Unknown"
+			},
+			"confidence": {
+				"type": "integer",
+				"default": 50
+			}
+		}
+	},
+	"capability": {
+		"type": "object",
+		"properties": {
+			"value": {
+				"description": "Capability of your adversary (Mitre Attack or generic if possible)",
+				"type": "string",
+				"default": "Unknown"
+			},
+			"reference": {
+				"description": "Mitre Attack ID or URL",
+				"type": "string"
+			},
+			"confidence": {
+				"type": "integer",
+				"default": 100
+			}
+		}
+	},
+	"infrastructure": {
+		"type": "object",
+		"properties": {
+			"type": {
+				"description": "Type 1: Owned and Operated, Type 2: Compromised or Service Provider.",
+				"type": "string",
+				"enum": [
+					"Type 1",
+					"Type 2",
+					"Service Provider",
+					"Unknown"
+				],
+				"default": "Unknown"
+			},
+			"kind": {
+				"type": "string",
+				"enum": [
+					"ipv4",
+					"email-addr",
+					"domain",
+					"url",
+					"address"
+				],
+				"default": "ipv4"
+			},
+			"value": {
+				"type": "string"
+			},
+			"confidence": {
+				"type": "integer",
+				"default": 80
+			}
+		}
+	},
+	"victim": {
+		"type": "object",
+		"properties": {
+			"type": {
+				"description": "Are you describing a person/group or an asset?",
+				"type": "string",
+				"enum": [
+					"Persona",
+					"Asset"
+				],
+				"default": "Persona"
+			},
+			"value": {
+				"description": "Victim name if known",
+				"type": "string",
+				"default": "Unknown"
+			},
+			"susceptibilities": {
+				"type": "string",
+				"default": "Unknown",
+				"description": "What is the victim susceptible to as part of this attack?"
+			},
+			"confidence": {
+				"type": "integer",
+				"default": 50
+			}
+		}
+	}
+}
